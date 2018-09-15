@@ -10,12 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var someService: SomeService?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        SomeService.shared.doStuff()
+//        SomeService.shared.doStuff()
+
+        someService?.doStuff()
     }
 
-    
+
 }
 
