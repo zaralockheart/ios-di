@@ -16,12 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        if let viewController = window?.rootViewController as! ViewController? {
-
-            let someService = SomeService.shared
-            viewController.someService = someService
-        }
+        let someService = SomeService.shared
         
+//        if let viewController = window?.rootViewController as! ViewController? {
+//
+//
+//            viewController.someService = someService
+//        }
+
+        let viewController = ViewController(someService: someService)
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = viewController
+        window.makeKeyAndVisible()
+        
+        self.window = window
         
         return true
     }
