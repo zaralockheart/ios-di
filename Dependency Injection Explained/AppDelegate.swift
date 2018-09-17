@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let someService = SomeService.shared
 
 
-        let mainController = ViewController(someService: someService) as UIViewController
+        let mainController = FirstViewController(someService: someService) as UIViewController
         let navigationController = UINavigationController(rootViewController: mainController)
         navigationController.navigationBar.isTranslucent = false
         self.window = UIWindow(frame: UIScreen.main.bounds)
