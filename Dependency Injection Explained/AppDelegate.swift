@@ -12,29 +12,23 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var navController: UINavigationController?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         let someService = SomeService.shared
-        
-//        if let viewController = window?.rootViewController as! ViewController? {
-//
-//
-//            viewController.someService = someService
-//        }
 
-        let viewController = ViewController(someService: someService)
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = viewController
-        window.makeKeyAndVisible()
+
+        let mainController = ViewController(someService: someService) as UIViewController
+        let navigationController = UINavigationController(rootViewController: mainController)
+        navigationController.navigationBar.isTranslucent = false
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = navigationController
+        self.window?.makeKeyAndVisible()
         
-        self.window = window
         
         return true
     }
-    
-    
 
 
 }

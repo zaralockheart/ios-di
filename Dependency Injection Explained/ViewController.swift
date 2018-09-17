@@ -8,28 +8,33 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    var someService: SomeService
-    
-    init(someService: SomeService){
-        self.someService = someService
-        super.init(nibName: nil, bundle: nil)
-        
-        view.backgroundColor = .red
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+class ViewController: BaseViewController {
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        SomeService.shared.doStuff()
+        self.title = "FirstVC"
+
+        let startFinishButton = UIButton(type: .system)
+        startFinishButton.frame = CGRect(x: 100.0, y: 100.0, width: 100.0, height: 50.0)
+        startFinishButton.backgroundColor = .green
+        startFinishButton.addTarget(self, action: #selector(ViewController.buttonAction(_:)), for: .touchUpInside)
+
+        self.view.addSubview(startFinishButton)
         
         someService.doStuff()
+        view.backgroundColor = .red
+    }
+
+    @objc func buttonAction(_ sender: UIButton!) {
+        let vc = SecondViewController(someService: someService)
+//        present(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+
     }
 
 
