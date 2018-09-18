@@ -9,6 +9,11 @@
 import UIKit
 
 class FirstViewController: BaseViewController {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,12 +22,13 @@ class FirstViewController: BaseViewController {
         setupUis()
 
         someService.doStuff()
+        
     }
 
     @objc func buttonAction(_ sender: UIButton!) {
         let vc = SecondViewController(someService: someService)
-//        present(vc, animated: true)
-        self.navigationController?.pushViewController(vc, animated: true)
+        present(vc, animated: false)
+//        self.navigationController?.pushViewController(vc, animated: false)
     }
 
     override func viewDidAppear(_ animated: Bool) {
