@@ -13,13 +13,18 @@ import UIKit
 class FirstViewWireFrame: FirstViewWireFrameProtocol {
     
     static func createFirstViewModule() -> UIViewController {
-        let someService = SomeService.shared
-        let uiController = FirstViewController(someService: someService)
-        if let view = uiController.childViewControllers.first as? FirstViewController {
+        let uiController = FirstViewController()
+        if let view = uiController as FirstViewController? {
             
-            let presenter: FirstPresenterProtocol = FirstViewPresenter()
+            let presenter: FirstPresenterProtocol & FirstViewInteractorOutputProtocol = FirstViewPresenter()
+            let wireFrame: FirstViewWireFrameProtocol = FirstViewWireFrame()
+            let interactor: FirstViewInteractorInputProtocol = FirstViewInteractor()
             
             view.presenter = presenter
+            presenter.view = view
+            presenter.wireFrame = wireFrame
+            presenter.interactor = interactor
+            interactor.presenter = presenter
             
             return view
         }

@@ -22,6 +22,8 @@ protocol FirstViewProtocol: class {
     
     func hideLoading()
     
+    func showDataToUser(_ posts: [PostModel])
+    
 }
 
 // Second, our presenter
@@ -35,7 +37,10 @@ protocol FirstPresenterProtocol: class {
     // Got stuff to load?
     var interactor: FirstViewInteractorInputProtocol? { get set }
     
+    // VIEW -> PRESENTER
+    func callThis()
     
+    func getData()
 }
 
 
@@ -55,11 +60,14 @@ protocol FirstViewWireFrameProtocol: class {
 protocol FirstViewInteractorInputProtocol: class{
     // our interactor will mostly be talking to presenter
     var presenter: FirstViewInteractorOutputProtocol? { get set }
+    
+    // PRESENTER -> INTERACTOR
+    func retrievePostList()
 }
 
 // Got input? Here's the output! Who's holding this? The presenter of course!
 protocol FirstViewInteractorOutputProtocol: class{
     // INTERACTOR -> PRESENTER
-//    func didRetrievePosts(_ posts: [SomeModel])
+    func onResponse(_ posts: [PostModel])
     func onError()
 }

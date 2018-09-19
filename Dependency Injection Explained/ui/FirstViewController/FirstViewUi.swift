@@ -8,7 +8,7 @@ import UIKit
 extension FirstViewController {
 
     func setupUis() {
-
+        
         self.view.backgroundColor = .white
         
         let startFinishButton: UIButton = {
