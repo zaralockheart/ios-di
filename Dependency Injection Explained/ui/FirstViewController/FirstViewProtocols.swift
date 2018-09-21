@@ -32,7 +32,7 @@ protocol FirstPresenterProtocol: class {
     var view: FirstViewProtocol? { get set }
     
     // Do we navigate? If yeah, then you want to call this
-    var wireFrame: FirstViewWireFrameProtocol? { get set }
+    var router: FirstViewRouterProtocol? { get set }
     
     // Got stuff to load?
     var interactor: FirstViewInteractorInputProtocol? { get set }
@@ -45,13 +45,13 @@ protocol FirstPresenterProtocol: class {
 
 
 // Third, let's create one for our wireframe
-protocol FirstViewWireFrameProtocol: class {
+protocol FirstViewRouterProtocol: class {
     
     // init out UIViewController
     static func createFirstViewModule() -> UIViewController
     
     // This is to navigate
-    func navigateToSecondViewController()
+    func navigateToSecondViewController(view: FirstViewProtocol)
 }
 
 // Got API / local?

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: BaseViewController {
+class SecondViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +18,6 @@ class SecondViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
 
-        someService.doStuff()
     }
 
 

@@ -17,7 +17,7 @@ class FirstViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = true
+//        self.navigationController?.isNavigationBarHidden = true
     }
 
     override func viewDidLoad() {
@@ -43,7 +43,6 @@ class FirstViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
     }
-    
 }
 
 // This is equivalent to class FirstViewController: BaseViewController, FirstViewProtocol
@@ -54,7 +53,6 @@ extension FirstViewController : FirstViewProtocol {
         self.postList = posts
         print(self.postList[0].imageUrl)
     }
-    
     
     func showError() {
         
@@ -67,7 +65,5 @@ extension FirstViewController : FirstViewProtocol {
     func hideLoading() {
         
     }
-    
-    
 }
 

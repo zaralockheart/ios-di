@@ -14,7 +14,7 @@ class FirstViewPresenter: FirstPresenterProtocol {
     
     var view: FirstViewProtocol?
     
-    var wireFrame: FirstViewWireFrameProtocol?
+    var router: FirstViewRouterProtocol?
     
     var interactor: FirstViewInteractorInputProtocol?
     
@@ -25,7 +25,8 @@ class FirstViewPresenter: FirstPresenterProtocol {
     
     func getData(){
         // Let's call get datas!!!
-        interactor?.retrievePostList()
+        router?.navigateToSecondViewController(view: view!)
+//        interactor?.retrievePostList()
     }
     
 }
@@ -35,11 +36,10 @@ class FirstViewPresenter: FirstPresenterProtocol {
 extension FirstViewPresenter: FirstViewInteractorOutputProtocol {
     func onResponse(_ posts: [PostModel]) {
         view?.showDataToUser(posts)
+        router?.navigateToSecondViewController(view: view!)
     }
     
     func onError() {
         
     }
-    
-    
 }

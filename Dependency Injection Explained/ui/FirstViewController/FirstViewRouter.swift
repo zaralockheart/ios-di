@@ -10,29 +10,39 @@ import UIKit
 
 // Wireframe class is the one handle navigations or init views, don't trippin' and do stupid other stuff... this architecture is freaking hard already
 
-class FirstViewWireFrame: FirstViewWireFrameProtocol {
+class FirstViewRouter: FirstViewRouterProtocol {
     
     static func createFirstViewModule() -> UIViewController {
+        let navCon = UINavigationController()
         let uiController = FirstViewController()
-        if let view = uiController as FirstViewController? {
+        navCon.viewControllers = [uiController]
+        if let view = navCon.viewControllers.first as! FirstViewController? {
+            
             
             let presenter: FirstPresenterProtocol & FirstViewInteractorOutputProtocol = FirstViewPresenter()
-            let wireFrame: FirstViewWireFrameProtocol = FirstViewWireFrame()
+            let router: FirstViewRouterProtocol = FirstViewRouter()
             let interactor: FirstViewInteractorInputProtocol = FirstViewInteractor()
             
             view.presenter = presenter
             presenter.view = view
-            presenter.wireFrame = wireFrame
+            presenter.router = router
             presenter.interactor = interactor
             interactor.presenter = presenter
             
-            return view
+            return navCon
         }
         
         return UIViewController()
     }
     
-    func navigateToSecondViewController() {
+    func navigateToSecondViewController(view: FirstViewProtocol) {
+        let nextVC = SecondViewController() as UIViewController
+        
+        
+        if let sourceView = view as? UIViewController {
+//            sourceView.present(nextVC, animated: true, completion: nil)
+            sourceView.navigationController?.pushViewController(nextVC, animated: true)
+        }
         
     }
 }

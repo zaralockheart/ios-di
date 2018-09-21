@@ -12,7 +12,7 @@
 		0538A967215276FE00FB6688 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0538A966215276FE00FB6688 /* PostModel.swift */; };
 		0538A9692152918B00FB6688 /* FirstViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0538A9682152918B00FB6688 /* FirstViewInteractor.swift */; };
 		0538A96C215297FB00FB6688 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0538A96B215297FB00FB6688 /* Endpoints.swift */; };
-		059290E421513DBC0059773B /* FirstViewWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059290E321513DBC0059773B /* FirstViewWireframe.swift */; };
+		059290E421513DBC0059773B /* FirstViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059290E321513DBC0059773B /* FirstViewRouter.swift */; };
 		059290E621513DEC0059773B /* FirstViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059290E521513DEC0059773B /* FirstViewProtocols.swift */; };
 		059290E8215144380059773B /* FirstViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059290E7215144380059773B /* FirstViewPresenter.swift */; };
 		30C26D8DBF700C78C97BDB6A /* Pods_Dependency_Injection_Explained.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E450DD23D5CA890A8D8331 /* Pods_Dependency_Injection_Explained.framework */; };
@@ -31,7 +31,7 @@
 		0538A966215276FE00FB6688 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		0538A9682152918B00FB6688 /* FirstViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewInteractor.swift; sourceTree = "<group>"; };
 		0538A96B215297FB00FB6688 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
-		059290E321513DBC0059773B /* FirstViewWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewWireframe.swift; sourceTree = "<group>"; };
+		059290E321513DBC0059773B /* FirstViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewRouter.swift; sourceTree = "<group>"; };
 		059290E521513DEC0059773B /* FirstViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewProtocols.swift; sourceTree = "<group>"; };
 		059290E7215144380059773B /* FirstViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewPresenter.swift; sourceTree = "<group>"; };
 		39E450DD23D5CA890A8D8331 /* Pods_Dependency_Injection_Explained.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dependency_Injection_Explained.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,12 +132,12 @@
 		CD4E3C5D3189C3668B96F319 /* FirstViewController */ = {
 			isa = PBXGroup;
 			children = (
-				CD4E37C6E8DBB0DD67FDC143 /* FirstViewController.swift */,
-				CD4E3ED565A552FD81281FFE /* FirstViewUi.swift */,
-				059290E321513DBC0059773B /* FirstViewWireframe.swift */,
 				059290E521513DEC0059773B /* FirstViewProtocols.swift */,
+				CD4E37C6E8DBB0DD67FDC143 /* FirstViewController.swift */,
 				059290E7215144380059773B /* FirstViewPresenter.swift */,
 				0538A9682152918B00FB6688 /* FirstViewInteractor.swift */,
+				059290E321513DBC0059773B /* FirstViewRouter.swift */,
+				CD4E3ED565A552FD81281FFE /* FirstViewUi.swift */,
 			);
 			path = FirstViewController;
 			sourceTree = "<group>";
@@ -277,7 +277,7 @@
 				9E9397AE20E9AF6600FD6DF5 /* SomeService.swift in Sources */,
 				0538A9692152918B00FB6688 /* FirstViewInteractor.swift in Sources */,
 				059290E621513DEC0059773B /* FirstViewProtocols.swift in Sources */,
-				059290E421513DBC0059773B /* FirstViewWireframe.swift in Sources */,
+				059290E421513DBC0059773B /* FirstViewRouter.swift in Sources */,
 				9E93979C20E9AF2300FD6DF5 /* AppDelegate.swift in Sources */,
 				CD4E39695E427F766409E50F /* FirstViewController.swift in Sources */,
 				0538A96C215297FB00FB6688 /* Endpoints.swift in Sources */,
